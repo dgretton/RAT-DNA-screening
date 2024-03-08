@@ -23,6 +23,12 @@ python rat_heatmap.py
 
 Extended Data Figures 6 and 7 appear.
 
+```
+python mhv_parallelized.py
+```
+
+Sample databases generated using the Metropolis-Hastings algorithm appear in resources/.
+
 ## resources/NGS/2021_02_08_multiple_libraries
 Window PQSVECRPFVFGAGKPYEF was studied first as a pilot. The data processing pipeline was 
 as follows.

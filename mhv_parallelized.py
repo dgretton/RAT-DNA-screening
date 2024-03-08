@@ -49,7 +49,7 @@ class ParallelizedMetroHastingsVariants:
                 proc_mhv_run = mp.Process(target=mhv.run)
                 proc_mhv_run.start()
                 procs.append(proc_mhv_run)
-            fname = f'resources/ordered_mhv_db_{self.fragment_shared}.txt'
+            fname = f'resources/mhv_db_{self.fragment_shared}_{int(self.num_entries)}.txt'
             with open(fname, 'w+') as f:
                 while not len(self.final_result_set) == self.num_entries:
                     item = json.loads(self.shared_queue.get())
@@ -144,7 +144,7 @@ if __name__ == '__main__':
     for window in windows_list:
         fragment, ntr_triples = parse_funtrp_line(window)
         for num_entries in np.array([10])**np.linspace(1,4,4):
-            mhv_wrapped = ParallelizedMetroHastingsVariants(fragment, ntr_triples, num_entries)
+            mhv_wrapped = ParallelizedMetroHastingsVariants(fragment, ntr_triples, int(num_entries))
             mhv_wrapped.run_parallel()
             print('Length result list of', fragment, len(mhv_wrapped.get_parallel_results()))
             print('Variant database results (max 40 shown):', list(mhv_wrapped.get_parallel_results())[:40])
