@@ -1,7 +1,7 @@
 # RAT-DNA-screening
 
 Code for data processing, software methods, and pipelines related to the manuscript 
-"Random adversarial threshold search enables automated DNA screening"
+"Exact-match search with functional variant prediction enables automated DNA screening"
 
 This code has been validated on Mac OS Ventura 13.3.1 with 8-core Apple silicon (M1 chip).
 
